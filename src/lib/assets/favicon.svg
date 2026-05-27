@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#1a3c2e"/>
+  <!-- Clock body -->
+  <circle cx="32" cy="36" r="18" fill="none" stroke="#a7f3d0" stroke-width="3"/>
+  <!-- Clock hands -->
+  <line x1="32" y1="36" x2="32" y2="22" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="32" y1="36" x2="42" y2="36" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Crown / top knob -->
+  <rect x="28" y="13" width="8" height="4" rx="2" fill="#a7f3d0"/>
+  <!-- Left lug -->
+  <line x1="22" y1="17" x2="26" y2="21" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right lug -->
+  <line x1="42" y1="17" x2="38" y2="21" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
