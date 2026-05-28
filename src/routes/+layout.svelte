@@ -25,13 +25,33 @@
 	}
 	:global(body) {
 		margin: 0;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
-		background: #fff;
-		color: #1f2937;
+		font-family: var(--font-body);
+		background: var(--bg-base);
+		color: var(--text-primary);
 		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		scroll-behavior: smooth;
 	}
 	:global(a) {
-		color: #2d6a4f;
+		color: var(--accent);
+		transition: color 0.2s var(--ease);
+	}
+	:global(a:hover) {
+		color: var(--text-secondary);
+	}
+	:global(::-webkit-scrollbar) {
+		width: 6px;
+	}
+	:global(::-webkit-scrollbar-track) {
+		background: var(--bg-base);
+	}
+	:global(::-webkit-scrollbar-thumb) {
+		background: var(--border-light);
+		border-radius: 3px;
+	}
+	:global(::-webkit-scrollbar-thumb:hover) {
+		background: var(--accent-dim);
 	}
 	.site-wrapper {
 		min-height: 100vh;

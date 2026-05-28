@@ -1,2 +1,37 @@
+/* ─── Google Fonts ───────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+/* ─── Design Tokens ──────────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:     #070c09;
+  --bg-surface:  #0f1a12;
+  --bg-elevated: #162119;
+  --bg-overlay:  rgba(7, 12, 9, 0.85);
+
+  /* Accent */
+  --accent:      #34d399;
+  --accent-dim:  #059669;
+  --accent-glow: rgba(52, 211, 153, 0.18);
+  --accent-pale: rgba(52, 211, 153, 0.08);
+
+  /* Text */
+  --text-primary:   #f0fdf4;
+  --text-secondary: #86efac;
+  --text-muted:     #4b7c61;
+  --text-faint:     #2d5040;
+
+  /* Borders */
+  --border:       #1f3a2a;
+  --border-light: #2a4f38;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
