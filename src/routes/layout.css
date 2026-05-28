@@ -4,34 +4,53 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-/* ─── Design Tokens ──────────────────────────────────────────────────────── */
+/* ─── Design Tokens ─────────────────────────────────────────────────────────
+   Source of truth: DESIGN.md — "Deep Cosmic Forest" dark system
+   ────────────────────────────────────────────────────────────────────────── */
 :root {
-  /* Backgrounds */
-  --bg-base:     #070c09;
-  --bg-surface:  #0f1a12;
-  --bg-elevated: #162119;
-  --bg-overlay:  rgba(7, 12, 9, 0.85);
+  /* ── Backgrounds (3-layer elevation system) ── */
+  --bg-base:     #070c09;          /* Void Forest Black — page base */
+  --bg-surface:  #0f1a12;          /* Shadowed Understory — sections */
+  --bg-elevated: #162119;          /* Moonlit Canopy — cards / hover */
+  --bg-overlay:  rgba(7, 12, 9, 0.85); /* Veil Overlay — glassmorphism nav */
 
-  /* Accent */
-  --accent:      #34d399;
-  --accent-dim:  #059669;
-  --accent-glow: rgba(52, 211, 153, 0.18);
-  --accent-pale: rgba(52, 211, 153, 0.08);
+  /* ── Accent (Luminescent Emerald + opacity tiers) ── */
+  --accent:           #34d399;                    /* Luminescent Emerald */
+  --accent-dim:       #059669;                    /* Deep Forest Ember */
+  --accent-pale:      rgba(52, 211, 153, 0.08);   /* Emerald Mist — default fills */
+  --accent-hover:     rgba(52, 211, 153, 0.14);   /* Emerald Haze — hover fills */
+  --accent-glow:      rgba(52, 211, 153, 0.18);   /* Emerald Radial Glow — hero orbs */
 
-  /* Text */
-  --text-primary:   #f0fdf4;
-  --text-secondary: #86efac;
-  --text-muted:     #4b7c61;
-  --text-faint:     #2d5040;
+  /* ── Accent borders ── */
+  --border-accent:     rgba(52, 211, 153, 0.25);  /* Emerald Whisper Border — default */
+  --border-accent-hov: rgba(52, 211, 153, 0.5);   /* Emerald Bloom Border — on hover */
+  --border-accent-dim: rgba(52, 211, 153, 0.3);   /* Emerald Dim Border — icon badges */
 
-  /* Borders */
-  --border:       #1f3a2a;
-  --border-light: #2a4f38;
+  /* ── Shadows ── */
+  --shadow-glow:     0 0 20px rgba(52, 211, 153, 0.1);   /* Emerald Aurora Glow */
+  --shadow-glow-str: 0 0 20px rgba(52, 211, 153, 0.18);  /* Stronger glow variant */
 
-  /* Typography */
-  --font-display: 'Syne', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
+  /* ── Text (4-tier hierarchy) ── */
+  --text-primary:   #f0fdf4;   /* Frost White */
+  --text-secondary: #86efac;   /* Soft Sage */
+  --text-muted:     #4b7c61;   /* Muted Moss */
+  --text-faint:     #2d5040;   /* Shadow Fern */
 
-  /* Transitions */
+  /* ── Borders (structural) ── */
+  --border:       #1f3a2a;   /* Deep Root Border */
+  --border-light: #2a4f38;   /* Raised Root Border */
+
+  /* ── Typography ── */
+  --font-display: 'Syne', sans-serif;   /* Geometric / headers */
+  --font-body:    'DM Sans', sans-serif; /* Humanist / body */
+
+  /* ── Radius scale (5 steps) ── */
+  --radius-xs:   4px;    /* Micro: check icon badge, bar rounding */
+  --radius-sm:   6px;    /* Interactive: nav links, buttons, focus rings */
+  --radius-md:   10px;   /* Components: feature cards, email links */
+  --radius-lg:   14px;   /* Containers: compliance box, FAQ items */
+  --radius-pill: 999px;  /* Pills: hero badge, any pill label */
+
+  /* ── Motion ── */
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }

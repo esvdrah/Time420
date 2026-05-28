@@ -26,6 +26,7 @@
 </article>
 
 <style>
+	/* DESIGN.md §5 Layout */
 	.legal-page {
 		padding: 4rem 0 5rem;
 	}
@@ -34,11 +35,14 @@
 		margin: 0 auto;
 		padding: 0 1.5rem;
 	}
+
+	/* Page header — DESIGN.md §4 Page Headers */
 	.page-header {
 		padding-bottom: 1.5rem;
 		margin-bottom: 2rem;
 		border-bottom: 1px solid var(--border);
 	}
+	/* Eyebrow */
 	.page-label {
 		font-family: var(--font-body);
 		font-size: 0.7rem;
@@ -48,6 +52,7 @@
 		color: var(--accent);
 		margin-bottom: 0.6rem;
 	}
+	/* H1 gradient — DESIGN.md §3 */
 	h1 {
 		font-family: var(--font-display);
 		font-size: clamp(1.75rem, 5vw, 2.5rem);
@@ -65,11 +70,15 @@
 		line-height: 1.8;
 		margin: 0 0 1rem;
 	}
+
+	/* Contact section — Deep Root Border divider */
 	.contact-section {
 		margin-top: 2.5rem;
 		padding-top: 2rem;
 		border-top: 1px solid var(--border);
 	}
+
+	/* Email link pill — DESIGN.md §4: --radius-md, all tokens, var(--ease) */
 	.email-link {
 		display: inline-flex;
 		align-items: center;
@@ -78,16 +87,19 @@
 		font-weight: 600;
 		color: var(--accent);
 		background: var(--accent-pale);
-		border: 1px solid rgba(52,211,153,0.25);
-		border-radius: 8px;
+		border: 1px solid var(--border-accent);
+		border-radius: var(--radius-md);
 		padding: 0.5rem 1rem;
 		text-decoration: none;
-		transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+		transition:
+			background 0.2s var(--ease),
+			border-color 0.2s var(--ease),
+			box-shadow 0.2s var(--ease);
 	}
 	.email-link:hover {
-		background: rgba(52,211,153,0.14);
-		border-color: rgba(52,211,153,0.5);
-		box-shadow: 0 0 16px rgba(52,211,153,0.1);
+		background: var(--accent-hover);
+		border-color: var(--border-accent-hov);
+		box-shadow: var(--shadow-glow);
 		color: var(--accent);
 	}
 </style>

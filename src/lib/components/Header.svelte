@@ -44,6 +44,7 @@
 </header>
 
 <style>
+	/* DESIGN.md §4 Navigation Header */
 	header {
 		background: var(--bg-overlay);
 		backdrop-filter: blur(16px);
@@ -62,6 +63,8 @@
 		justify-content: space-between;
 		gap: 1rem;
 	}
+
+	/* Logo — with hover opacity feedback */
 	.logo {
 		display: flex;
 		align-items: center;
@@ -69,6 +72,10 @@
 		text-decoration: none;
 		color: var(--text-primary);
 		flex-shrink: 0;
+		transition: opacity 0.2s var(--ease);
+	}
+	.logo:hover {
+		opacity: 0.8;
 	}
 	.logo-text {
 		font-family: var(--font-display);
@@ -77,6 +84,8 @@
 		letter-spacing: -0.02em;
 		color: var(--text-primary);
 	}
+
+	/* Nav links */
 	.nav-links {
 		display: flex;
 		align-items: center;
@@ -89,8 +98,10 @@
 		color: var(--text-muted);
 		text-decoration: none;
 		padding: 0.4rem 0.75rem;
-		border-radius: 6px;
-		transition: color 0.2s var(--ease), background 0.2s var(--ease);
+		border-radius: var(--radius-sm);
+		transition:
+			color 0.2s var(--ease),
+			background 0.2s var(--ease);
 		letter-spacing: 0.01em;
 	}
 	.nav-link:hover {
@@ -101,6 +112,8 @@
 		color: var(--accent);
 		background: var(--accent-pale);
 	}
+
+	/* Hamburger toggle */
 	.menu-toggle {
 		display: none;
 		flex-direction: column;
@@ -109,7 +122,7 @@
 		border: none;
 		cursor: pointer;
 		padding: 6px;
-		border-radius: 6px;
+		border-radius: var(--radius-sm);
 		transition: background 0.2s var(--ease);
 	}
 	.menu-toggle:hover {
@@ -120,8 +133,11 @@
 		width: 22px;
 		height: 2px;
 		background: var(--text-muted);
-		border-radius: 2px;
-		transition: transform 0.3s var(--ease), opacity 0.3s var(--ease), background 0.2s;
+		border-radius: var(--radius-xs);
+		transition:
+			transform 0.3s var(--ease),
+			opacity 0.3s var(--ease),
+			background 0.2s var(--ease);
 	}
 	.menu-toggle:hover .bar {
 		background: var(--text-primary);

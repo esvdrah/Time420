@@ -65,6 +65,7 @@
 </article>
 
 <style>
+	/* DESIGN.md §5 Layout — content max-width 720px, 4-5rem vertical padding */
 	.support-page {
 		padding: 4rem 0 5rem;
 	}
@@ -73,11 +74,14 @@
 		margin: 0 auto;
 		padding: 0 1.5rem;
 	}
+
+	/* Page header — DESIGN.md §4 Page Headers */
 	.page-header {
 		margin-bottom: 2.5rem;
 		padding-bottom: 1.5rem;
 		border-bottom: 1px solid var(--border);
 	}
+	/* Eyebrow — DESIGN.md §3: 0.7rem DM Sans 600 ALL CAPS Luminescent Emerald */
 	.page-label {
 		font-family: var(--font-body);
 		font-size: 0.7rem;
@@ -87,6 +91,7 @@
 		color: var(--accent);
 		margin-bottom: 0.6rem;
 	}
+	/* H1 gradient — DESIGN.md §3: Frost White → Luminescent Emerald */
 	h1 {
 		font-family: var(--font-display);
 		font-size: clamp(1.75rem, 5vw, 2.5rem);
@@ -115,6 +120,8 @@
 	.contact-section {
 		margin-bottom: 3rem;
 	}
+
+	/* Email link pill — DESIGN.md §4: --radius-md, Emerald tokens */
 	.email-link {
 		display: inline-flex;
 		align-items: center;
@@ -123,19 +130,24 @@
 		font-weight: 600;
 		color: var(--accent);
 		background: var(--accent-pale);
-		border: 1px solid rgba(52,211,153,0.25);
-		border-radius: 8px;
+		border: 1px solid var(--border-accent);
+		border-radius: var(--radius-md);
 		padding: 0.6rem 1.1rem;
 		text-decoration: none;
-		transition: background 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+		transition:
+			background 0.2s var(--ease),
+			border-color 0.2s var(--ease),
+			box-shadow 0.2s var(--ease);
 		letter-spacing: 0.01em;
 	}
 	.email-link:hover {
-		background: rgba(52,211,153,0.14);
-		border-color: rgba(52,211,153,0.5);
-		box-shadow: 0 0 16px rgba(52,211,153,0.12);
+		background: var(--accent-hover);
+		border-color: var(--border-accent-hov);
+		box-shadow: var(--shadow-glow);
 		color: var(--accent);
 	}
+
+	/* Section eyebrow */
 	.section-label {
 		font-family: var(--font-body);
 		font-size: 0.7rem;
@@ -153,10 +165,12 @@
 		flex-direction: column;
 		gap: 0.75rem;
 	}
+
+	/* FAQ card — DESIGN.md §4: --radius-lg (14px), Shadowed Understory bg */
 	.faq-item {
 		background: var(--bg-surface);
 		border: 1px solid var(--border);
-		border-radius: 12px;
+		border-radius: var(--radius-lg);
 		padding: 1.25rem 1.35rem;
 		transition: border-color 0.2s var(--ease);
 	}
@@ -174,6 +188,7 @@
 		margin-bottom: 0.65rem;
 		letter-spacing: -0.01em;
 	}
+	/* FAQ icon badge — DESIGN.md §4: circle, Emerald Whisper Border */
 	.faq-icon {
 		display: flex;
 		align-items: center;
@@ -183,7 +198,7 @@
 		min-width: 20px;
 		border-radius: 50%;
 		background: var(--accent-pale);
-		border: 1px solid rgba(52,211,153,0.3);
+		border: 1px solid var(--border-accent-dim);
 		color: var(--accent);
 		font-size: 0.7rem;
 		font-weight: 800;

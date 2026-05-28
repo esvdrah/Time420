@@ -17,9 +17,10 @@
 </svelte:head>
 
 <section class="hero">
-	<!-- Ambient background orbs -->
+	<!-- Atmospheric depth layers — DESIGN.md §4 Hero Section -->
 	<div class="orb orb-1" aria-hidden="true"></div>
 	<div class="orb orb-2" aria-hidden="true"></div>
+	<div class="dot-grid" aria-hidden="true"></div>
 	<div class="noise" aria-hidden="true"></div>
 
 	<div class="container hero-content">
@@ -71,7 +72,7 @@
 		padding: 0 1.5rem;
 	}
 
-	/* ── Hero ──────────────────────────────────────────────── */
+	/* ── Hero — DESIGN.md §4: "Deep Cosmic Forest with bioluminescent glow" ── */
 	.hero {
 		position: relative;
 		overflow: hidden;
@@ -79,6 +80,8 @@
 		text-align: center;
 		background: var(--bg-base);
 	}
+
+	/* Radial glow orbs — use tokens, no magic rgba */
 	.orb {
 		position: absolute;
 		border-radius: 50%;
@@ -88,7 +91,7 @@
 	.orb-1 {
 		width: 500px;
 		height: 500px;
-		background: radial-gradient(circle, rgba(52,211,153,0.14) 0%, transparent 70%);
+		background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
 		top: -120px;
 		left: 50%;
 		transform: translateX(-50%);
@@ -96,11 +99,24 @@
 	.orb-2 {
 		width: 300px;
 		height: 300px;
-		background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 70%);
+		background: radial-gradient(circle, var(--accent-pale) 0%, transparent 70%);
 		bottom: -60px;
 		right: 10%;
 	}
-	/* Subtle grain overlay */
+
+	/* Dot grid — spatial depth texture, DESIGN.md §4 Hero */
+	.dot-grid {
+		position: absolute;
+		inset: 0;
+		background-image: radial-gradient(circle, var(--border-light) 1px, transparent 1px);
+		background-size: 32px 32px;
+		pointer-events: none;
+		opacity: 0.35;
+		mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+		-webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+	}
+
+	/* Grain noise overlay */
 	.noise {
 		position: absolute;
 		inset: 0;
@@ -108,10 +124,13 @@
 		pointer-events: none;
 		opacity: 0.4;
 	}
+
 	.hero-content {
 		position: relative;
 		z-index: 1;
 	}
+
+	/* Badge pill — DESIGN.md §4: --radius-pill, Emerald Mist fill */
 	.hero-badge {
 		display: inline-flex;
 		align-items: center;
@@ -124,7 +143,7 @@
 		font-weight: 600;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.35rem 1rem;
 		margin-bottom: 1.75rem;
 	}
@@ -137,8 +156,10 @@
 	}
 	@keyframes pulse {
 		0%, 100% { opacity: 1; transform: scale(1); }
-		50% { opacity: 0.5; transform: scale(0.85); }
+		50%       { opacity: 0.5; transform: scale(0.85); }
 	}
+
+	/* H1 gradient — DESIGN.md §3: Frost White → Luminescent Emerald → Deep Forest Ember */
 	.hero h1 {
 		font-family: var(--font-display);
 		font-size: clamp(3rem, 9vw, 5rem);
@@ -146,7 +167,6 @@
 		line-height: 1.05;
 		letter-spacing: -0.03em;
 		margin: 0 0 1rem;
-		/* gradient text */
 		background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 60%, var(--accent-dim) 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -168,13 +188,14 @@
 		line-height: 1.75;
 	}
 
-	/* ── Features ──────────────────────────────────────────── */
+	/* ── Features — DESIGN.md §4: Feature Cards ── */
 	.features-section {
 		padding: 5rem 0;
 		background: var(--bg-surface);
 		border-top: 1px solid var(--border);
 		border-bottom: 1px solid var(--border);
 	}
+	/* Section eyebrow — DESIGN.md §3: 0.7rem DM Sans 600 ALL CAPS Luminescent Emerald */
 	.section-label {
 		font-family: var(--font-body);
 		font-size: 0.7rem;
@@ -200,23 +221,27 @@
 		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 		gap: 0.75rem;
 	}
+	/* Card: --radius-md (10px), Moonlit Canopy bg, Deep Root Border */
 	.feature-item {
 		display: flex;
 		align-items: flex-start;
 		gap: 0.75rem;
 		background: var(--bg-elevated);
 		border: 1px solid var(--border);
-		border-radius: 10px;
+		border-radius: var(--radius-md);
 		padding: 1rem 1.1rem;
 		font-size: 0.925rem;
 		color: var(--text-primary);
 		line-height: 1.5;
-		transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+		transition:
+			border-color 0.2s var(--ease),
+			background 0.2s var(--ease);
 	}
 	.feature-item:hover {
 		border-color: var(--border-light);
 		background: var(--bg-surface);
 	}
+	/* Check icon badge — --radius-xs (4px), Emerald Dim Border */
 	.check {
 		display: flex;
 		align-items: center;
@@ -225,13 +250,13 @@
 		height: 22px;
 		min-width: 22px;
 		background: var(--accent-pale);
-		border: 1px solid rgba(52,211,153,0.3);
-		border-radius: 6px;
+		border: 1px solid var(--border-accent-dim);
+		border-radius: var(--radius-xs);
 		color: var(--accent);
 		margin-top: 0.1em;
 	}
 
-	/* ── Compliance ────────────────────────────────────────── */
+	/* ── Compliance — DESIGN.md §4: --radius-lg (14px), container card ── */
 	.compliance-section {
 		padding: 4rem 0;
 		background: var(--bg-base);
@@ -242,7 +267,7 @@
 		gap: 1.25rem;
 		background: var(--bg-surface);
 		border: 1px solid var(--border);
-		border-radius: 14px;
+		border-radius: var(--radius-lg);
 		padding: 1.75rem 2rem;
 	}
 	.compliance-icon {

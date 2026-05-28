@@ -53,6 +53,16 @@
 	:global(::-webkit-scrollbar-thumb:hover) {
 		background: var(--accent-dim);
 	}
+	/* ── Accessible focus ring — on-brand Luminescent Emerald ── */
+	:global(:focus-visible) {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+		border-radius: var(--radius-sm);
+	}
+	/* Remove focus ring for mouse users; keep for keyboard */
+	:global(:focus:not(:focus-visible)) {
+		outline: none;
+	}
 	.site-wrapper {
 		min-height: 100vh;
 		display: flex;

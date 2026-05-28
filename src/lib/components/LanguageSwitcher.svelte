@@ -15,22 +15,30 @@
 </button>
 
 <style>
+	/* Compact outlined pill — DESIGN.md §4 Navigation Header / Language Switcher */
 	.lang-btn {
-		display: inline-block;
-		font-size: 0.85rem;
-		font-weight: 600;
-		color: #2d6a4f;
-		border: 1.5px solid #2d6a4f;
-		border-radius: 4px;
-		padding: 0.2rem 0.6rem;
-		background: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-family: var(--font-display);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		color: var(--accent);
+		border: 1.5px solid var(--border-accent);
+		border-radius: var(--radius-sm);
+		padding: 0.25rem 0.65rem;
+		background: transparent;
 		cursor: pointer;
-		transition: background 0.15s, color 0.15s;
+		transition:
+			background 0.2s var(--ease),
+			color 0.2s var(--ease),
+			border-color 0.2s var(--ease);
 		white-space: nowrap;
-		font-family: inherit;
 	}
 	.lang-btn:hover {
-		background: #2d6a4f;
-		color: #fff;
+		background: var(--accent-hover);
+		border-color: var(--border-accent-hov);
+		color: var(--accent);
 	}
 </style>
